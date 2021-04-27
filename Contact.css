@@ -52,7 +52,6 @@ html,body  {background-color:#8b3330;
 		 padding: 80px;
 		 font-family:cursive;
 		 background-image: url(connect.jpg);
-		 
 		 background-position: center;
 		 border-width: 3px;
          border-style: dotted;
@@ -64,6 +63,7 @@ form    {font-family: Arial, sans-serif;
 		 color: #2a1c35;
 		 font-size: 12pt;
 		 font-weight: bold;
+		 width:70%;
 		 }
 table    {margin: auto;
 		  border; 20px;
