@@ -64,7 +64,8 @@ form    {font-family: Arial, sans-serif;
 		 font-size: 12pt;
 		 font-weight: bold;
 		 width:70%;
-		 text-align:center;
+		 margin-left:auto;
+		 margin-right:auto;
 		 }
 table    {margin: auto;
 		  border; 20px;
