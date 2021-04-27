@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Contact Me</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="Contact.css">
+</head>
+<body>
+<div id="wrapper">
+<header style="color:#5c2c2c;background-image: linear-gradient(#8f7aa1,#2a1c35)">
+<h1>Let's Connect!</h1>
+</header>
+<nav>
+<h2> 
+<ul>
+	<li><a href="index.html">Home</a></li>
+	<li><a href="about.html">About</a></li>
+	<li><a href="organizing.html">Organizing</a></li>
+	<li>Contact</a></li>
+	<li><a href="resources.html">Resources</a></li>
+</ul>
+</h2>
+</nav>
+<main>
+<form method="post" action="http://webdevbasics.net/scripts/demo.php">
+	
+<table border="1">
+<tr><td>Your Name: </td><td><input type="text" name="fname" id="fname" required="required"</td><tr>
+<tr><td>Email address: </td><td><input type="email" name="email" id="email" required="required"</td><tr>
+<tr><td>Phone Number: </td><td><input type="text" name="pnumber" id="pnumber" required="required"</td></tr>
+</table>
+<br>
+<br>
+
+TU Affiliation:<br>
+<input type="radio" name="affiliation" id="student" value="ST">Student<br>
+<input type="radio" name="affiliation" id="alumni" value="AL">Alumni<br>
+<input type="radio" name="affiliation" id="faculty" value="FA">Faculty<br>
+<input type="radio" name="affiliation" id="staff" value="SF">Staff<br>
+<input type="radio" name="affiliation" id="community" value="CM">Community<br>
+<br>
+<br>
+
+<select reason="1" name="reason" id="showreason">
+  <option>Reason for connecting</option>
+  <option value="General Inquiry">General Inquiry</option>
+  <option value="Networking">Networking</option>
+  <option value="Business Opportunity">Business Opportunity</option>
+  <option value="Coffee and Chat">Coffee and Chat</option>
+</select>
+<br>
+<br>
+<br>
+Other ways you would like to connect: <br>
+<input type="checkbox" name="newsletter" id="NL" value="yes">Subscribe to my newsletter!<br>
+<input type="checkbox" name="facebook" id="FB" value="yes">Facebook<br>
+<input type="checkbox" name="twiiter" id="TW" value="yes">Twitter<br>
+<input type="checkbox" name="instagram" id="IG" value="yes">Instagram<br>
+<input type="checkbox" name="linkedin" id="LK" value="yes">LinkedIn<br>
+<br>
+<br>
+<fieldset>
+<legend>Just for fun- Tell me about you!</legend>
+<label>Favorite Ice Cream: <input type="text" name="street" id="street" size="25"></label><br><br>
+<label>Favorite Color: <input type="text" name="city" id="city" size="25"></label><br><br>
+<label>Favorite Book: <input type="text" name="state" id="state" size="25"></label><br><br>
+<label>Beach or Camping: <input type="text" name="zip" id="zip" size="25"></label><br><br>
+<label>Hometown: <input type="text" name="street" id="street" size="25"></label><br><br>
+</fieldset>
+<br>
+<br>
+
+Leave Me A Message!<br>
+<textarea name="comment" id="comment"rows="5" cols="50"></textarea>
+<br>
+<br>
+<br>
+
+
+<input id="submit" type="submit" value="Submit Information">
+<input id="reset" type="reset" value="Reset">
+<br>
+<br>
+<br>
+</form>
+</main>
+<footer class="foundation"> &copy; Copyright 2021 Tanisha Smith
+<a href="mailto:tsmith109@students.towson.edu"> &nbsp; Email Me</a>
+</footer>
+</div>
+</body>
+</html>
