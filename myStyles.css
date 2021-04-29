@@ -56,6 +56,7 @@ html,body  {background-color:#8b3330;
 		 height: 150%;
 		 padding: 10px 0px 100px 0px;
 		 font-family:cursive;
+		 text-shadow: 2px 2px #5c2c2c;
 	     }
 	table {margin: auto;
 		  border-color: #2a1c35;
