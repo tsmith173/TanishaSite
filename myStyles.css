@@ -85,7 +85,8 @@ html,body  {background-color:#8b3330;
     dd {margin: 0;
         padding: 0 0 0.5em 0;
         }
-	blockquote {font-family:cursive;}
+	blockquote {font-family:cursive;
+				text-shadow: 3px 3px #5c2c2c;}
 	footer   {text-align: center;
 			 padding: 150px;
 			 }
