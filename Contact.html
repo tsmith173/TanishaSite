@@ -16,18 +16,18 @@
 	<li><a href="index.html">Home</a></li>
 	<li><a href="about.html">About</a></li>
 	<li><a href="organizing.html">Organizing</a></li>
-	<li>Contact</a></li>
+	<li>Contact</li>
 	<li><a href="resources.html">Resources</a></li>
 </ul>
 </h2>
 </nav>
 <main>
-<form id="contactForm" method="POST">
+<form id="contactForm">
 	
 <table border="1">
-<tr><td>Your Name: </td><td><input type="text" name="fname" id="fname" required="required"</td><tr>
-<tr><td>Email address: </td><td><input type="email" name="email" id="email" required="required"</td><tr>
-<tr><td>Phone Number: </td><td><input type="text" name="pnumber" id="pnumber" required="required"</td></tr>
+<tr><td>Your Name: </td><td><input type="text" name="fname" id="fname" required></td></tr>
+<tr><td>Email address: </td><td><input type="email" name="email" id="email" required></td></tr>
+<tr><td>Phone Number: </td><td><input type="text" name="pnumber" id="pnumber" required></td></tr>
 </table>
 <br>
 <br>
@@ -41,7 +41,7 @@ TU Affiliation:<br>
 <br>
 <br>
 
-<select reason="1" name="reason" id="showreason">
+<select name="reason" id="showreason">
   <option>Reason for connecting</option>
   <option value="General Inquiry">General Inquiry</option>
   <option value="Networking">Networking</option>
@@ -71,11 +71,11 @@ Other ways you would like to connect: <br>
 <br>
 
 Leave Me A Message!<br>
-<textarea name="comment" id="comment"rows="5" cols="50"></textarea>
-<br>
+<textarea name="comment" id="comment" rows="5" cols="50"></textarea>
 <br>
 <br>
 
+<p id="form-status" style="font-weight: bold;"></p>
 
 <input id="submit" type="submit" value="Submit Information">
 <input id="reset" type="reset" value="Reset">
@@ -88,21 +88,23 @@ Leave Me A Message!<br>
 <a href="mailto:tsmith109@students.towson.edu"> &nbsp; Email Me</a>
 </footer>
 </div>
+
 <script>
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault(); // Stop the page from reloading
+  // 1. Fixed ID to match your HTML ('contactForm' instead of 'contact-form')
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault(); 
       
       const status = document.getElementById('form-status');
       status.innerText = "Sending...";
       status.style.color = "black"; 
       
+      // 2. Mapped your specific HTML names (fname, comment) to the JSON the Lambda expects
       const formData = {
-          name: this.name.value,
-          email: this.email.value,
-          message: this.message.value
+          name: this.fname.value,    // Matches <input name="fname">
+          email: this.email.value,   // Matches <input name="email">
+          message: this.comment.value // Matches <textarea name="comment">
       };
 
-      // I added '/prod/contact' to the end of your link
       fetch('https://mk0d5zi60d.execute-api.us-east-1.amazonaws.com/prod/contact', {
           method: 'POST',
           headers: {
@@ -114,7 +116,7 @@ Leave Me A Message!<br>
           if (response.ok) {
               status.innerText = "Message sent successfully! Tanisha will get back to you.";
               status.style.color = "green";
-              this.reset(); // Clear the form
+              this.reset(); 
           } else {
               status.innerText = "Failed to send message.";
               status.style.color = "red";
