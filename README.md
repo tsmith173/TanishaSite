@@ -11,50 +11,44 @@
 
 ## 🏗️ Architecture Diagram
 
-```mermaid
-graph TB
-    subgraph "User Layer"
-        User[👤 End User<br/>Web Browser]
-    end
-    
-    subgraph "GitHub"
-        GitHub[📦 GitHub Repository<br/>tsmith173/TanishaSite]
-    end
-    
-    subgraph "AWS Cloud - US-EAST-1"
-        subgraph "CI/CD Pipeline"
-            CodePipeline[⚙️ AWS CodePipeline<br/>Automated Deployments]
-        end
-        
-        subgraph "Frontend Layer"
-            S3[🪣 Amazon S3<br/>Static Website Hosting]
-        end
-        
-        subgraph "API Layer"
-            APIGateway[🌐 API Gateway<br/>HTTP API]
-        end
-        
-        subgraph "Compute Layer"
-            Lambda[⚡ AWS Lambda<br/>Python 3.12]
-        end
-        
-        subgraph "Data Layer"
-            DynamoDB[💾 DynamoDB<br/>NoSQL Database]
-        end
-        
-        subgraph "Security Layer"
-            IAM[🔐 IAM<br/>Roles & Policies]
-        end
-    end
-    
-    User -->|Views Website| S3
-    User -->|Submits Form| APIGateway
-    GitHub -->|Push Code| CodePipeline
-    CodePipeline -->|Deploy| S3
-    APIGateway -->|Invokes| Lambda
-    Lambda -->|Stores Data| DynamoDB
-    IAM -.->|Permissions| Lambda
-    IAM -.->|Permissions| CodePipeline
+### Data Flow
+```
+User Browser
+    ↓
+Amazon S3 (Static Website)
+    ↓
+API Gateway (REST API)
+    ↓
+AWS Lambda (Python Function)
+    ↓
+DynamoDB (Form Data Storage)
+
+CI/CD Flow:
+GitHub → CodePipeline → S3 (Auto-deployment)
+
+Security:
+IAM Roles → Lambda & CodePipeline Permissions
+```
+
+### Architecture Components
+
+**Frontend Tier**
+- Amazon S3: Static website hosting
+- Content: HTML, CSS, JavaScript
+
+**Application Tier**
+- API Gateway: RESTful API endpoints (`POST /submit`, `OPTIONS /submit`)
+- AWS Lambda: Serverless Python function for form processing
+
+**Data Tier**
+- DynamoDB: NoSQL database for persistent storage
+
+**DevOps Pipeline**
+- GitHub: Source code repository
+- CodePipeline: Automated CI/CD deployments
+
+**Security Layer**
+- IAM: Role-based access control for all services
 ```
 
 ---
