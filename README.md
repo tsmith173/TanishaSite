@@ -1,7 +1,7 @@
 # Smith & Daughters: AWS Cloud Migration Project
 
 ## 🎯 Project Overview
-**Role:** Cloud Engineer & DevOps Lead  
+**Role:** Cloud Engineer – Portfolio Project  
 **Objective:** Migrate a legacy static web application created in 2021 from Netlify (PaaS) to AWS, implementing a fully serverless 3-tier architecture with CI/CD automation.
 
 **Live Site:** http://tanisha-smith-portfolio.s3-website-us-east-1.amazonaws.com  
