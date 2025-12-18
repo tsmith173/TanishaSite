@@ -37,7 +37,7 @@ IAM Roles → Lambda & CodePipeline Permissions
 - Content: HTML, CSS, JavaScript
 
 **Application Tier**
-- API Gateway: RESTful API endpoints (`POST /submit`, `OPTIONS /submit`)
+- API Gateway: RESTful API endpoints (`POST /contact`, `OPTIONS /contact`)
 - AWS Lambda: Serverless Python function for form processing
 
 **Data Tier**
@@ -68,8 +68,8 @@ IAM Roles → Lambda & CodePipeline Permissions
 
 ### **Backend Layer (Serverless)**
 - **Amazon API Gateway**: HTTP API for RESTful endpoints
-  - `POST /submit` - Form submission endpoint
-  - `OPTIONS /submit` - CORS preflight handling
+  - `POST /contact` - Form submission endpoint
+  - `OPTIONS /contact` - CORS preflight handling
 - **AWS Lambda**: Serverless compute function
   - **Runtime**: Python 3.12
   - **Function**: `ContactFormHandler`
@@ -200,7 +200,7 @@ cd TanishaSite
 
 **6. Configure API Gateway**
 - Create HTTP API
-- Add routes: `POST /submit`, `OPTIONS /submit`
+- Add routes: `POST /contact`, `OPTIONS /contact`
 - Connect to Lambda function
 - Enable CORS
 
