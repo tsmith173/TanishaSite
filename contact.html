@@ -90,7 +90,6 @@ Leave Me A Message!<br>
 </div>
 
 <script>
-  // 1. Fixed ID to match your HTML ('contactForm' instead of 'contact-form')
   document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault(); 
       
@@ -98,14 +97,13 @@ Leave Me A Message!<br>
       status.innerText = "Sending...";
       status.style.color = "black"; 
       
-      // 2. Mapped your specific HTML names (fname, comment) to the JSON the Lambda expects
       const formData = {
-          name: this.fname.value,    // Matches <input name="fname">
-          email: this.email.value,   // Matches <input name="email">
-          message: this.comment.value // Matches <textarea name="comment">
+          name: this.fname.value,
+          email: this.email.value,
+          message: this.comment.value 
       };
 
-      fetch('https://mk0d5zi60d.execute-api.us-east-1.amazonaws.com/prod/contact', {
+      fetch('https://6bzixx76fe.execute-api.us-east-1.amazonaws.com/prod/contact', {
           method: 'POST',
           headers: {
               'Content-Type': 'application/json'
@@ -116,7 +114,8 @@ Leave Me A Message!<br>
           if (response.ok) {
               status.innerText = "Message sent successfully! Tanisha will get back to you.";
               status.style.color = "green";
-              this.reset(); 
+              // FIXED: Correctly resets the form
+              document.getElementById('contactForm').reset(); 
           } else {
               status.innerText = "Failed to send message.";
               status.style.color = "red";
