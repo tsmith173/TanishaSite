@@ -4,7 +4,7 @@
 **Role:** Cloud Engineer – Portfolio Project  
 **Objective:** Migrate a legacy static web application created in 2021 from Netlify (PaaS) to AWS, implementing a fully serverless 3-tier architecture with CI/CD automation.
 
-**Live Site:** https://www.smithanddaughters.org/index.html  
+**Live Site:** https://www.smithanddaughters.org  
 **GitHub Repository:** https://github.com/tsmith173/TanishaSite
 
 ---
